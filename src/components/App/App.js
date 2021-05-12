@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Movies from '../Movies/Movies.js'
 import movieData from '../../movieData'
 import './App.css'
 
