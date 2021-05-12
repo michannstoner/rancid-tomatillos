@@ -1,4 +1,5 @@
 # Rancid Tomatillos
+A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Stoner](https://github.com/michannstoner).
 
 ### Description
 
@@ -21,6 +22,7 @@
   <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
   <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
   <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+  <img alt="Cypress.io" src="https://img.shields.io/badge/Jest%20-%2343853D.svg?&color=lightgreen&style=for-the-badge&logo=jest&logoColor=orange"/> 
 </p>
 
 ### Wins & Challenges 
