@@ -1,0 +1,22 @@
+* {
+  border: 1px solid black;
+}
+
+img {
+  height: 200px;
+  width: 200px
+}
+
+.movieCard {
+  height: 300px;
+  width: 300px;
+display: flex;
+flex-direction: column;
+}
+
+
+/* display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 20px;
+padding: 20px;
+height: 100%; */
