@@ -14,9 +14,9 @@ class App extends Component {
     }
   }
 
-  displayMovieDetails = id => {
+  toggleMovieDetails = id => {
 
-    this.setState({displayMovieDetails: true, id: id})
+    this.setState({displayMovieDetails: !this.state.displayMovieDetails, id: id})
 
   }
 
@@ -27,12 +27,13 @@ class App extends Component {
         {!this.state.displayMovieDetails &&
           <Movies
             movieData={this.state.movieData}
-            displayMovieDetails={this.displayMovieDetails}
+            displayMovieDetails={this.toggleMovieDetails}
           />}
         {this.state.displayMovieDetails &&
           <MovieDetails
             movieData={this.state.movieData}
             id={this.state.id}
+            displayAllMovies={this.toggleMovieDetails}
           />}
 
       </main>
