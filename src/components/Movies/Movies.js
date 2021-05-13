@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard/MovieCard.js'
 import './Movies.css'
 
 
-const Movies = ({ movieData }) => {
+const Movies = ({ movieData, displayMovieDetails }) => {
   const movieCards = movieData.map(movie => {
     return (
       <MovieCard
@@ -11,6 +11,7 @@ const Movies = ({ movieData }) => {
         id={movie.id}
         title={movie.title}
         img={movie.poster_path}
+        displayMovieDetails={displayMovieDetails}
       />
     )
   })

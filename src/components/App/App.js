@@ -12,11 +12,19 @@ class App extends Component {
     }
   }
 
+  displayMovieDetails = () => {
+    this.setState({displayMovieDetails: true})
+  }
+
   render() {
     return (
       <main className="App">
         <h1>Rancid Tomatillos</h1>
-        {!this.state.displayMovieDetails && <Movies movieData={this.state.movieData} />}
+        {!this.state.displayMovieDetails &&
+          <Movies
+            movieData={this.state.movieData}
+            displayMovieDetails={this.displayMovieDetails}
+          />}
       </main>
     )
   }
