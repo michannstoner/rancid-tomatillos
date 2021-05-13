@@ -6,6 +6,7 @@ const MovieCard = props => {
     <article className='movieCard'>
 
       <img src={props.img} alt="movie poster"/>
+      <button onClick={ () => props.displayMovieDetails(props.id)}>Click for Details</button>
       <p>{props.title}</p>
 
     </article>

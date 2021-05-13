@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
+import MovieDetails from '../MovieDetails/MovieDetails'
 import movieData from '../../movieData'
 import './App.css'
 
@@ -7,15 +8,34 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: movieData.movies
+      movieData: movieData.movies,
+      displayMovieDetails: false,
+      id: ''
     }
+  }
+
+  toggleMovieDetails = id => {
+
+    this.setState({displayMovieDetails: !this.state.displayMovieDetails, id: id})
+
   }
 
   render() {
     return (
       <main className="App">
         <h1>Rancid Tomatillos</h1>
-        <Movies movieData={this.state.movieData}/>
+        {!this.state.displayMovieDetails &&
+          <Movies
+            movieData={this.state.movieData}
+            displayMovieDetails={this.toggleMovieDetails}
+          />}
+        {this.state.displayMovieDetails &&
+          <MovieDetails
+            movieData={this.state.movieData}
+            id={this.state.id}
+            displayAllMovies={this.toggleMovieDetails}
+          />}
+
       </main>
     )
   }
