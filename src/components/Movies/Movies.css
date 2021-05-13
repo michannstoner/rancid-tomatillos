@@ -1,7 +1,20 @@
+body {
+  background-color: #1B1C1D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 5em;
+  color: white;
+}
+
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
 }
