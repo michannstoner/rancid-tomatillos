@@ -7,6 +7,7 @@ const MovieCard = props => {
 
       <img src={props.img} alt="movie poster"/>
       <p>{props.title}</p>
+      <button>Click for Details</button>
 
     </article>
   )
