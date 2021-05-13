@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
+import MovieDetails from '../MovieDetails/MovieDetails'
 import movieData from '../../movieData'
 import './App.css'
 
@@ -28,7 +29,11 @@ class App extends Component {
             movieData={this.state.movieData}
             displayMovieDetails={this.displayMovieDetails}
           />}
-
+        {this.state.displayMovieDetails &&
+          <MovieDetails
+            movieData={this.state.movieData}
+            id={this.state.id}
+          />}
 
       </main>
     )
