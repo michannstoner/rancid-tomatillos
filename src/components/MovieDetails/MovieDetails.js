@@ -8,7 +8,11 @@ const MovieDetails = ( {movieData, id} ) => {
   })
   console.log(movieToDisplay)
   return (
-    <h1>Hello</h1>
+    <div className="movieDetailsContainer">
+      <img src={movieToDisplay.poster_path} />
+      <h1>{movieToDisplay.title}</h1>
+      <h2>{movieToDisplay.average_rating.toFixed(1)} ⭐️</h2>
+    </div>
   )
 }
 
