@@ -6,7 +6,6 @@ const MovieDetails = ( {movieData, id, displayAllMovies} ) => {
   const movieToDisplay = movieData.find(movie => {
     return movie.id === id
   })
-  console.log(movieToDisplay)
   return (
     <div className="movieDetailsContainer">
       <img src={movieToDisplay.poster_path} />
