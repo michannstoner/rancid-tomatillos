@@ -7,7 +7,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: movieData.movies
+      movieData: movieData.movies,
+      displayMovieDetails: false
     }
   }
 
@@ -15,7 +16,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1>Rancid Tomatillos</h1>
-        <Movies movieData={this.state.movieData}/>
+        {!this.state.displayMovieDetails && <Movies movieData={this.state.movieData} />}
       </main>
     )
   }
