@@ -8,12 +8,15 @@ class App extends Component {
     super()
     this.state = {
       movieData: movieData.movies,
-      displayMovieDetails: false
+      displayMovieDetails: false,
+      id: ''
     }
   }
 
-  displayMovieDetails = () => {
-    this.setState({displayMovieDetails: true})
+  displayMovieDetails = id => {
+
+    this.setState({displayMovieDetails: true, id: id})
+
   }
 
   render() {
@@ -25,6 +28,8 @@ class App extends Component {
             movieData={this.state.movieData}
             displayMovieDetails={this.displayMovieDetails}
           />}
+
+
       </main>
     )
   }
