@@ -16,5 +16,5 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 100px;
-  grid-row-gap: 80px;
+  grid-row-gap: 100px;
 }
