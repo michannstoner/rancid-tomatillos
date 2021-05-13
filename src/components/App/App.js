@@ -14,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+        <h1>Rancid Tomatillos</h1>
         <Movies movieData={this.state.movieData}/>
       </main>
     )
@@ -22,4 +23,4 @@ class App extends Component {
 
 
 
-export default App;
+export default App
