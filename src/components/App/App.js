@@ -1,17 +1,25 @@
 import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
 import MovieDetails from '../MovieDetails/MovieDetails'
-import movieData from '../../movieData'
+// import movieData from '../../movieData'
 import './App.css'
+import { getAllMovies } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movieData: movieData.movies,
+      movieData: [],
       displayMovieDetails: false,
       id: ''
     }
+  }
+
+  componentDidMount = () => {
+    getAllMovies()
+      .then(data => {
+        this.setState({ movieData: data })
+      })
   }
 
   toggleMovieDetails = id => {
