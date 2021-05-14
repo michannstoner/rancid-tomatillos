@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       movieData: [],
       displayMovieDetails: false,
-      id: ''
+      id: '',
+      error: ''
     }
   }
 
@@ -20,6 +21,7 @@ class App extends Component {
       .then(data => {
         this.setState({ movieData: data.movies })
       })
+      .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
 
   toggleMovieDetails = id => {
