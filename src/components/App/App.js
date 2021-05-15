@@ -3,7 +3,7 @@ import Movies from '../Movies/Movies.js'
 import MovieDetails from '../MovieDetails/MovieDetails'
 // import movieData from '../../movieData'
 import './App.css'
-import { getAllMovies } from '../../apiCalls'
+import { getAllMovies, getSingleMovie } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -11,8 +11,8 @@ class App extends Component {
     this.state = {
       movieData: [],
       displayMovieDetails: false,
-      id: '',
-      error: ''
+      error: '',
+      singleMovie: {},
     }
   }
 
@@ -25,9 +25,12 @@ class App extends Component {
   }
 
   toggleMovieDetails = id => {
+    this.fetchSingleMovie(id)
+  }
 
-    this.setState({displayMovieDetails: !this.state.displayMovieDetails, id: id})
-
+  fetchSingleMovie = async (id) => {
+    const fetchMovie = await getSingleMovie(id)
+      this.setState({ displayMovieDetails: !this.state.displayMovieDetails, singleMovie: fetchMovie })
   }
 
   render() {
@@ -41,8 +44,7 @@ class App extends Component {
           />}
         {this.state.displayMovieDetails &&
           <MovieDetails
-            movieData={this.state.movieData}
-            id={this.state.id}
+            singleMovieDetails={this.state.singleMovie}
             displayAllMovies={this.toggleMovieDetails}
           />}
 
