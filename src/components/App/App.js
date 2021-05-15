@@ -28,16 +28,20 @@ class App extends Component {
     this.fetchSingleMovie(id)
   }
 
-  fetchSingleMovie = async (id) => {
-    const fetchMovie = await getSingleMovie(id)
-      this.setState({ displayMovieDetails: !this.state.displayMovieDetails, singleMovie: fetchMovie })
+  fetchSingleMovie = (id) => {
+    getSingleMovie(id)
+      .then(data => {
+        this.setState({ displayMovieDetails: !this.state.displayMovieDetails, singleMovie: data })
+      })
+      .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
 
   render() {
     return (
       <main className="App">
         <h1>Rancid Tomatillos</h1>
-        {!this.state.displayMovieDetails &&
+        {this.state.error && <h2>{this.state.error}</h2>}
+        {!this.state.displayMovieDetails && !this.state.error &&
           <Movies
             movieData={this.state.movieData}
             displayMovieDetails={this.toggleMovieDetails}
