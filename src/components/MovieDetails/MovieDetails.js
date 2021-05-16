@@ -17,9 +17,13 @@ const MovieDetails = ( { singleMovieDetails, displayAllMovies} ) => {
       <div className='infoContainer'>
         <h2>⭐️ {singleMovieDetails.movie.average_rating.toFixed(1)}</h2>
         <h2>{yearReleased}</h2>
+      </div>
+      <div className='overviewContainer'>
         <p>{singleMovieDetails.movie.overview}</p>
       </div>
-      <button onClick={ () => displayAllMovies()}>GO BACK</button>
+      <div className='buttonContainer'>
+        <button onClick={ () => displayAllMovies()}>GO BACK</button>
+      </div>
     </section>
   )  
 }
