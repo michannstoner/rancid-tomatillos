@@ -22,15 +22,16 @@ class MovieDetails extends Component {
   render() {
     const movieDate = new Date(`${this.state.singleMovie.release_date}`)
     const yearReleased = movieDate.getFullYear()
-
     const backgroundStyle = {
     backgroundImage: `linear-gradient(to right, #1C1D1E, 60%, transparent), url(${this.state.singleMovie.backdrop_path})`
-  }
+    }
+
     return (
       <section className="movieDetailsContainer" style={backgroundStyle}>
         <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
         <div className='infoContainer'>
-          <h2>⭐️ {this.state.singleMovie.average_rating}</h2>
+         {this.state.singleMovie.average_rating && 
+          <h2>⭐️ {this.state.singleMovie.average_rating.toFixed(1)}</h2>}
           <h2>{yearReleased}</h2>
         </div>
         <div className='overviewContainer'>
