@@ -5,21 +5,19 @@ import { Link } from 'react-router-dom'
 
 class MovieDetails extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       singleMovie: {},
-      error: ''
-    }
+      error: "",
+    };
   }
-
   componentDidMount = () => {
-    console.log(props.match.params);
-    getSingleMovie(id)
-      .then(data => {
-        this.setState({singleMovie: data.movie})
+    getSingleMovie(this.props.movieId)
+      .then((data) => {
+        this.setState({ singleMovie: data.movie });
       })
-      .catch(error => this.setState({error: 'Something went wrong!'}))
-  }
+      .catch((error) => this.setState({ error: "Something went wrong!" }));
+  };
 
   render() {
     const movieDate = new Date(`${this.state.singleMovie.release_date}`)

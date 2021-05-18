@@ -38,7 +38,7 @@ class App extends Component {
           console.log(match);
           const { movies_id } = match.params
           return ( 
-          <MovieDetails />
+          <MovieDetails movieId={movies_id}/>
           )
         }} />
       </main>
