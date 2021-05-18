@@ -4,6 +4,7 @@ import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
+import { filterResults } from '../../utilities'
 
 class App extends Component {
   constructor() {
@@ -17,7 +18,8 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
       .then(data => {
-        this.setState({ movieData: data.movies })
+        const results = filterResults(data)
+        this.setState({ movieData: results })
       })
       .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
@@ -27,22 +29,22 @@ class App extends Component {
       <main className="App">
         <h1>Rancid Tomatillos</h1>
         {this.state.error && <h2>{this.state.error}</h2>}
-        <Route 
-          exact path='/' 
+        <Route
+          exact path='/'
           render={() => {
             return (
               <Movies movieData={this.state.movieData} />
             )
-          }} 
+          }}
         />
-        <Route 
-          path='/movies/:movies_id' 
+        <Route
+          path='/movies/:movies_id'
           render={({ match }) => {
             const { movies_id } = match.params
-            return ( 
+            return (
               <MovieDetails movieId={movies_id} />
             )
-          }} 
+          }}
         />
       </main>
     )
