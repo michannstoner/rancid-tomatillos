@@ -40,11 +40,14 @@ class App extends Component {
       <main className="App">
         <h1>Rancid Tomatillos</h1>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.displayMovieDetails && !this.state.error &&
-          <Movies
-            movieData={this.state.movieData}
-            displayMovieDetails={this.toggleMovieDetails}
-          />}
+        <Route exact path='/' render={() => {
+          return (
+            <Movies
+              movieData={this.state.movieData}
+              displayMovieDetails={this.toggleMovieDetails}
+            />
+          )
+        }} />
         {this.state.displayMovieDetails &&
           <MovieDetails
             singleMovieDetails={this.state.singleMovie}
