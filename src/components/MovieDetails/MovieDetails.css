@@ -5,6 +5,8 @@
   width: 100vw;
   background-size: cover;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .infoContainer {
