@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css'
-import { getAllMovies, getSingleMovie } from '../../apiCalls'
+import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
@@ -23,18 +23,6 @@ class App extends Component {
       .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
 
-  toggleMovieDetails = id => {
-    this.fetchSingleMovie(id)
-  }
-
-  fetchSingleMovie = (id) => {
-    getSingleMovie(id)
-      .then(data => {
-        this.setState({ singleMovie: data })
-      })
-      .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
-  }
-
   render() {
     return (
       <main className="App">
@@ -43,17 +31,14 @@ class App extends Component {
         <Route exact path='/' render={() => {
           return (
             <Movies
-              movieData={this.state.movieData}
-              displayMovieDetails={this.toggleMovieDetails}
-            />
+              movieData={this.state.movieData} />
           )
         }} />
         <Route path='/movies/:movies_id' render={({ match }) => {
+          console.log(match);
+          const { movies_id } = match.params
           return ( 
-          <MovieDetails
-            singleMovieDetails={this.state.singleMovie}
-            displayAllMovies={this.toggleMovieDetails}
-          />
+          <MovieDetails />
           )
         }} />
       </main>

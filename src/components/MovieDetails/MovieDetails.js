@@ -1,40 +1,48 @@
 import React, { Component } from 'react'
 import { getSingleMovie } from '../../apiCalls'
 import './MovieDetails.css'
+import { Link } from 'react-router-dom'
 
 class MovieDetails extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      singleMovie: {}
+      singleMovie: {},
+      error: ''
     }
   }
 
-  componentDidMount = ({ props.id }) => {
-    getSingleMovie()
-
+  componentDidMount = () => {
+    console.log(props.match.params);
+    getSingleMovie(id)
+      .then(data => {
+        this.setState({singleMovie: data.movie})
+      })
+      .catch(error => this.setState({error: 'Something went wrong!'}))
   }
 
   render() {
-    const movieDate = new Date(`${singleMovieDetails.movie.release_date}`)
+    const movieDate = new Date(`${this.state.singleMovie.release_date}`)
     const yearReleased = movieDate.getFullYear()
 
     const backgroundStyle = {
-    backgroundImage: `linear-gradient(to right, #1C1D1E, 60%, transparent), url(${singleMovieDetails.movie.backdrop_path})`
+    backgroundImage: `linear-gradient(to right, #1C1D1E, 60%, transparent), url(${this.state.singleMovie.backdrop_path})`
   }
     return (
       <section className="movieDetailsContainer" style={backgroundStyle}>
-        <h2 className='movieTitle'>{singleMovieDetails.movie.title}</h2>
+        <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
         <div className='infoContainer'>
-          <h2>⭐️ {singleMovieDetails.movie.average_rating.toFixed(1)}</h2>
+          <h2>⭐️ {this.state.singleMovie.average_rating}</h2>
           <h2>{yearReleased}</h2>
         </div>
         <div className='overviewContainer'>
-          <p>{singleMovieDetails.movie.overview}</p>
+          <p>{this.state.singleMovie.overview}</p>
         </div>
-        <div className='buttonContainer'>
-          <button onClick={ () => displayAllMovies()}>GO BACK</button>
-        </div>
+        <Link to='/'>
+          <div className='buttonContainer'>
+            <button>GO BACK</button>
+          </div>
+        </Link>
       </section>
     )  
   }

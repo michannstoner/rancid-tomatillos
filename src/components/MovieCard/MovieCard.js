@@ -7,7 +7,7 @@ const MovieCard = props => {
     <article className='movieCard'>
       <img src={props.img} alt="movie poster"/>
       <Link to={`/movies/${props.id}`}>
-        <button onClick={ () => props.displayMovieDetails(props.id)}>Click for Details</button>
+        <button>Click for Details</button>
       </Link>
       <p>{props.title}</p>
 
