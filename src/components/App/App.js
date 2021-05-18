@@ -10,8 +10,7 @@ class App extends Component {
     super()
     this.state = {
       movieData: [],
-      error: '',
-      singleMovie: {},
+      error: ''
     }
   }
 
@@ -28,24 +27,26 @@ class App extends Component {
       <main className="App">
         <h1>Rancid Tomatillos</h1>
         {this.state.error && <h2>{this.state.error}</h2>}
-        <Route exact path='/' render={() => {
-          return (
-            <Movies
-              movieData={this.state.movieData} />
-          )
-        }} />
-        <Route path='/movies/:movies_id' render={({ match }) => {
-          console.log(match);
-          const { movies_id } = match.params
-          return ( 
-          <MovieDetails movieId={movies_id}/>
-          )
-        }} />
+        <Route 
+          exact path='/' 
+          render={() => {
+            return (
+              <Movies movieData={this.state.movieData} />
+            )
+          }} 
+        />
+        <Route 
+          path='/movies/:movies_id' 
+          render={({ match }) => {
+            const { movies_id } = match.params
+            return ( 
+              <MovieDetails movieId={movies_id} />
+            )
+          }} 
+        />
       </main>
     )
   }
 }
-
-
 
 export default App
