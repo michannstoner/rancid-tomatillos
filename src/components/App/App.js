@@ -48,12 +48,14 @@ class App extends Component {
             />
           )
         }} />
-        {this.state.displayMovieDetails &&
+        <Route path='/movies/:movies_id' render={({ match }) => {
+          return ( 
           <MovieDetails
             singleMovieDetails={this.state.singleMovie}
             displayAllMovies={this.toggleMovieDetails}
-          />}
-
+          />
+          )
+        }} />
       </main>
     )
   }
