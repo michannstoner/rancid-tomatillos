@@ -1,5 +1,5 @@
-const filterResults = (obj) => {
-  const filteredData = obj.movies.map(movie => {
+const filterResults = moviesData => {
+  const filteredData = moviesData.movies.map(movie => {
     return {
       "id": movie.id,
       "poster_path": movie.poster_path,
