@@ -1,16 +1,15 @@
 import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
 import MovieDetails from '../MovieDetails/MovieDetails'
-// import movieData from '../../movieData'
 import './App.css'
 import { getAllMovies, getSingleMovie } from '../../apiCalls'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       movieData: [],
-      displayMovieDetails: false,
       error: '',
       singleMovie: {},
     }
@@ -31,7 +30,7 @@ class App extends Component {
   fetchSingleMovie = (id) => {
     getSingleMovie(id)
       .then(data => {
-        this.setState({ displayMovieDetails: !this.state.displayMovieDetails, singleMovie: data })
+        this.setState({ singleMovie: data })
       })
       .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
