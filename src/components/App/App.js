@@ -52,27 +52,15 @@ filterMovies = value => {
       <main className="App">
         <NavBar handleChange={this.handleChange}/>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {this.state.searchBarValue &&
-          <Route
-            exact path='/'
-              render={() => {
-                return (
-                  <Movies movieData={this.state.filteredMovies} />
-                )
-              }}
-            />
-          }
-        }
-        {!this.state.searchBarValue &&
         <Route
           exact path='/'
             render={() => {
+              const whichData = this.state.searchBarValue ? this.state.filteredMovies : this.state.movieData
               return (
-                <Movies movieData={this.state.movieData} />
+                <Movies movieData={whichData} />
               )
             }}
           />
-        }
         <Route
           path='/movies/:movies_id'
           render={({ match }) => {
