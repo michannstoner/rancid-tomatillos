@@ -12,7 +12,8 @@ class App extends Component {
     super()
     this.state = {
       movieData: [],
-      error: ''
+      error: '',
+      searchBarValue: ''
     }
   }
 
@@ -25,19 +26,28 @@ class App extends Component {
       .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
 
+  handleChange = (event) => {
+    this.setState({
+      searchBarValue: event.target.value
+    })
+    console.log(this.state.searchBarValue)
+  }
+
   render() {
     return (
       <main className="App">
-        <NavBar />
+        <NavBar handleChange={this.handleChange}/>
         {this.state.error && <h2>{this.state.error}</h2>}
+        {!this.state.searchBarValue &&
         <Route
           exact path='/'
-          render={() => {
-            return (
-              <Movies movieData={this.state.movieData} />
-            )
-          }}
-        />
+            render={() => {
+              return (
+                <Movies movieData={this.state.movieData} />
+              )
+            }}
+          />
+        }
         <Route
           path='/movies/:movies_id'
           render={({ match }) => {
