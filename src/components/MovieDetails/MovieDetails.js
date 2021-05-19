@@ -50,8 +50,8 @@ class MovieDetails extends Component {
           src={`https://youtube.com/embed/${this. state.singleVideo.key}`}
           alt='trailer-iframe-video-player'
           title='trailer-video-player'
-          height='400'
-          width='700'>
+          height='300'
+          width='500'>
         </iframe>
         </div>
         <Link to='/'>
