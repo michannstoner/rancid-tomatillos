@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getSingleMovie } from '../../apiCalls'
 import './MovieDetails.css'
 import { Link } from 'react-router-dom'
+import { filterSingleMovieResult } from '../../utilities'
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class MovieDetails extends Component {
   componentDidMount = () => {
     getSingleMovie(this.props.movieId)
       .then((data) => {
-        this.setState({ singleMovie: data.movie });
+        const filteredMovieData = filterSingleMovieResult(data)
+        this.setState({ singleMovie: filteredMovieData });
+        console.log(this.state.singleMovie)
       })
       .catch((error) => this.setState({ error: "Something went wrong!" }));
   };
@@ -30,7 +33,7 @@ class MovieDetails extends Component {
       <section className="movieDetailsContainer" style={backgroundStyle}>
         <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
         <div className='infoContainer'>
-         {this.state.singleMovie.average_rating && 
+         {this.state.singleMovie.average_rating &&
           <h2>⭐️ {this.state.singleMovie.average_rating.toFixed(1)}</h2>}
           <h2>{yearReleased}</h2>
         </div>
@@ -43,7 +46,7 @@ class MovieDetails extends Component {
           </div>
         </Link>
       </section>
-    )  
+    )
   }
 }
 

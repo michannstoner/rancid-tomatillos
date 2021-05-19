@@ -4,7 +4,7 @@ import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
-import { filterResults } from '../../utilities'
+import { filterMoviesResults, filterSingleMovieResult } from '../../utilities'
 
 class App extends Component {
   constructor() {
@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
       .then(data => {
-        const results = filterResults(data)
+        const results = filterMoviesResults(data)
         this.setState({ movieData: results })
       })
       .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
