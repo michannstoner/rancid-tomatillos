@@ -1,7 +1,7 @@
 describe('Homepage', () => {
 
   beforeEach(() => {
-    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       'movies': [
         {
           'id': 12367,
@@ -39,7 +39,11 @@ describe('Homepage', () => {
   })
 
   it('should only display movies that meet search criteria', () => {
-    
+    cy.get('form > input').type('movie')
+      .get('.movieCard').should('have.length', 1)
+      .get('.movieCard').contains('A Movie')
+
   })
 
 })
+
