@@ -12,9 +12,12 @@ class App extends Component {
     super()
     this.state = {
       movieData: [],
-      error: ''
+      error: '',
+      searchBarValue: '',
+      filteredMovies: []
     }
   }
+
 
   componentDidMount = () => {
     getAllMovies()
@@ -25,19 +28,39 @@ class App extends Component {
       .catch(error => this.setState({ error: 'Something went wrong, try again later!' }))
   }
 
+
+  handleChange = (event) => {
+    this.setState({
+      searchBarValue: event.target.value
+    })
+    this.filterMovies(event.target.value)
+  }
+
+
+filterMovies = value => {
+  const filteredMovies = this.state.movieData.filter(movie => {
+    return movie.title.toLowerCase().includes(value.toLowerCase())
+  })
+  this.setState({
+    filteredMovies: filteredMovies
+  })
+}
+
+
   render() {
     return (
       <main className="App">
-        <NavBar />
+        <NavBar handleChange={this.handleChange}/>
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
           exact path='/'
-          render={() => {
-            return (
-              <Movies movieData={this.state.movieData} />
-            )
-          }}
-        />
+            render={() => {
+              const whichData = this.state.searchBarValue ? this.state.filteredMovies : this.state.movieData
+              return (
+                <Movies movieData={whichData} />
+              )
+            }}
+          />
         <Route
           path='/movies/:movies_id'
           render={({ match }) => {
