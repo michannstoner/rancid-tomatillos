@@ -7,8 +7,8 @@ const MovieCard = props => {
     <article className='movieCard'>
       <Link to={`/movies/${props.id}`}>
         <img src={props.img} alt="movie poster"/>
-        <p>{props.title}</p>
       </Link>
+      <p>{props.title}</p>
     </article>
   )
 }
