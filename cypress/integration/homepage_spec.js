@@ -42,8 +42,14 @@ describe('Homepage', () => {
     cy.get('form > input').type('movie')
       .get('.movieCard').should('have.length', 1)
       .get('.movieCard').contains('A Movie')
-
   })
+})
 
+describe('Error Handling', () => {
+  it('should display an error message when movie data fetch fails', () => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {})
+      .visit('http://localhost:3000')
+      .get('h2').contains('Something went wrong, try again later!')
+  })
 })
 
