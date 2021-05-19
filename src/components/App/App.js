@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
 import MovieDetails from '../MovieDetails/MovieDetails'
+import NavBar from '../NavBar/NavBar'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>Rancid Tomatillos</h1>
+        <NavBar />
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
           exact path='/'
