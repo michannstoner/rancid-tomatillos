@@ -17,7 +17,6 @@ class MovieDetails extends Component {
       .then((data) => {
         const filteredMovieData = filterSingleMovieResult(data)
         this.setState({ singleMovie: filteredMovieData });
-        console.log(this.state.singleMovie)
       })
       .catch((error) => this.setState({ error: "Something went wrong!" }));
   };
