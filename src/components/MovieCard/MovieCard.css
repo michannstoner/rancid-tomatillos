@@ -1,13 +1,16 @@
 /* * {
   border: 1px solid black;
 } */
+a {
+  height: I’m 575px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
 
 .movieCard {
   background-size: cover;
-  height: 475px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
+  
   transition: 0.5s ease;
   cursor: pointer;
   color: white;
