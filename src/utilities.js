@@ -23,4 +23,9 @@ const filterSingleMovieResult = singleMovieData => {
   return filteredData
 }
 
-export { filterMoviesResults, filterSingleMovieResult }
+const filterVideoResults = singleVideoData => {
+  const filteredVideoData = singleVideoData.videos[0].key
+  return filteredVideoData
+}
+
+export { filterMoviesResults, filterSingleMovieResult, filterVideoResults }
