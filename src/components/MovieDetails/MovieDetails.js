@@ -21,13 +21,14 @@ class MovieDetails extends Component {
         const filteredMovieData = filterSingleMovieResult(data)
         this.setState({ singleMovie: filteredMovieData })
       })
-      .catch(error => this.setState({ error: "Something went wrong!" }));
+      .catch(error => this.setState({ error: 'Something went wrong!' }));
     
       getSingleVideo(this.props.movieId)
       .then(data => {
         const filteredVideoData = filterVideoResults(data)
         this.setState({ singleVideoKey: filteredVideoData})
       })
+      .catch(error => this.setState({ error: 'Unable to load video!'}))
   }
 
   render() {
