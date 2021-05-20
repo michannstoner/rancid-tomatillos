@@ -18,9 +18,9 @@ describe('Homepage', () => {
       ]    
     })
       .visit('http://localhost:3000')
-  })
+})
 
-  it('should display movie cards on page load', () => {
+it('should display movie cards on page load', () => {
     cy.get('.movieCard').contains('Another One')
       .get('.movieCard').contains('A Movie')
       .get('.movieCard').should('have.length', 2)
