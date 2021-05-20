@@ -2,29 +2,31 @@ import React, { Component } from 'react'
 import { getSingleMovie, getSingleVideo } from '../../apiCalls'
 import './MovieDetails.css'
 import { Link } from 'react-router-dom'
-import { filterSingleMovieResult } from '../../utilities'
+import { filterSingleMovieResult, filterVideoResults } from '../../utilities'
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
       singleMovie: {},
-      singleVideo: {},
-      error: "",
+      singleVideoKey: '',
+      error: '',
     }
   }
+
+
   componentDidMount = (id) => {
     getSingleMovie(this.props.movieId)
-      .then((data) => {
+      .then(data => {
         const filteredMovieData = filterSingleMovieResult(data)
         this.setState({ singleMovie: filteredMovieData })
       })
-      .catch((error) => this.setState({ error: "Something went wrong!" }));
+      .catch(error => this.setState({ error: "Something went wrong!" }));
     
       getSingleVideo(this.props.movieId)
       .then(data => {
-        this.setState({ singleVideo: data.videos[0]})
-        console.log(this.state.singleVideo);
+        const filteredVideoData = filterVideoResults(data)
+        this.setState({ singleVideoKey: filteredVideoData})
       })
   }
 
@@ -47,7 +49,7 @@ class MovieDetails extends Component {
         </div>
         <div className='videoContainer'>
         <iframe 
-          src={`https://youtube.com/embed/${this. state.singleVideo.key}`}
+          src={`https://youtube.com/embed/${this.state.singleVideoKey}`}
           alt='trailer-iframe-video-player'
           title='trailer-video-player'
           height='300'
