@@ -9,15 +9,24 @@
   flex-direction: column;
 }
 
+.movieTitle {
+  font-size: 2.5em;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
 .infoContainer {
   display: flex;
   justify-content:space-around;
   width: 15vw;
 }
 
-.movieTitle {
-  font-size: 2.5em;
-  margin-left: 0.5em;
-  margin-top: 0.5em;
+.overviewContainer {
+  height: 60vh;
+  width: 40vw;
+}
+
+.videoContainer {
+  align-self: flex-end;
 }
 
