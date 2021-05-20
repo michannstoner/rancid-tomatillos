@@ -51,6 +51,7 @@ filterMovies = value => {
     return (
       <main className="App">
         <NavBar handleChange={this.handleChange}/>
+        {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
           exact path='/'
