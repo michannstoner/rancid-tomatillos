@@ -2,7 +2,7 @@ import React from 'react'
 import MovieCard from '../MovieCard/MovieCard.js'
 import './Movies.css'
 
-const Movies = ({ movieData, displayMovieDetails }) => {
+const Movies = ({ movieData }) => {
   const movieCards = movieData.map(movie => {
     return (
       <MovieCard
@@ -15,7 +15,7 @@ const Movies = ({ movieData, displayMovieDetails }) => {
   })
 
   return (
-    <div className="cardContainer">
+    <div className='cardContainer'>
       {movieCards}
     </div>
   )
