@@ -29,7 +29,7 @@ class App extends Component {
   }
 
 
-  handleChange = (event) => {
+  filterMoviesBySearch = (event) => {
     this.setState({
       searchBarValue: event.target.value
     })
@@ -50,7 +50,7 @@ filterMovies = value => {
   render() {
     return (
       <main className="App">
-        <NavBar handleChange={this.handleChange}/>
+        <NavBar handleChange={this.filterMoviesBySearch}/>
         {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
