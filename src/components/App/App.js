@@ -30,21 +30,21 @@ class App extends Component {
 
 
   filterMoviesBySearch = (event) => {
-    this.setState({
-      searchBarValue: event.target.value
+    this.setState({searchBarValue: event.target.value}, () => {
+        this.filterMovies(this.state.searchBarValue)
     })
-    this.filterMovies(event.target.value)
   }
 
 
-filterMovies = value => {
-  const filteredMovies = this.state.movieData.filter(movie => {
-    return movie.title.toLowerCase().includes(value.toLowerCase())
-  })
-  this.setState({
-    filteredMovies: filteredMovies
-  })
-}
+  filterMovies = value => {
+    const filteredMovies = this.state.movieData.filter(movie => {
+      return movie.title.toLowerCase().includes(value.toLowerCase())
+    })
+    this.setState({
+      filteredMovies: filteredMovies
+    })
+  }
+
 
 
   render() {
