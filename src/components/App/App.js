@@ -37,8 +37,8 @@ class App extends Component {
     })
   }
 
+
   clearFilteredMovies = () => {
-    console.log('hello')
     this.setState({
       filteredMovies: []
     })
@@ -75,6 +75,7 @@ class App extends Component {
       </main>
     )
   }
+
 }
 
 export default App
