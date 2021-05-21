@@ -10,14 +10,15 @@ const Movies = ({ movieData }) => {
         id={movie.id}
         title={movie.title}
         img={movie.poster_path}
+        rating={movie.average_rating}
       />
     )
   })
 
   return (
-    <div className='cardContainer'>
+    <section className='cardContainer'>
       {movieCards}
-    </div>
+    </section>
   )
 }
 

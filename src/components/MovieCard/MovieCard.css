@@ -1,25 +1,43 @@
-/* * {
-  border: 1px solid black;
-} */
 a {
-  height: I’m 575px;
-  width: 400px;
+  height: 425px;
+  width: 275px;
   display: flex;
   flex-direction: column;
 }
 
 .movieCard {
   background-size: cover;
-  
   transition: 0.5s ease;
   cursor: pointer;
   color: white;
   font-size: 1.5em;
   font-family: 'Poppins', sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .movieCard:hover {
   transform: scale(1.2);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0);
+  color: #83e377;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.title,
+.rating {
+  margin: 0;
+  width: 15em;
+  font-size: 18px;
+}
+
+.rating {
+  margin-right: 1em;
 }
