@@ -46,8 +46,12 @@ class App extends Component {
         showError: true
       })
     }
-  }
-
+    if (this.state.filteredMovies.length && value) {
+      this.setState({
+        showError: false
+      })
+    }
+}
 
   clearFilteredMovies = () => {
     this.setState({
