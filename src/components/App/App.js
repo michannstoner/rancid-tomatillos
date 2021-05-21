@@ -51,7 +51,8 @@ class App extends Component {
         showError: false
       })
     }
-}
+  }
+
 
   clearFilteredMovies = () => {
     this.setState({
@@ -64,40 +65,35 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-
         {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Switch>
-        <Route
-          exact path='/'
-          render={() => {
-            const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
-            return (
-              <div>
-                <NavBar
-                  clearFilteredMovies={this.clearFilteredMovies}
-                  filterMovies={this.filterMovies}
-                />
-
-                {this.state.showError && <h1>No movies match your search criteria!</h1>}
-
-                {!this.state.showError && <Movies movieData={whichData} />}
-
-              </div>
-            )
-          }}
-        />
-
-        <Route
-          exact path='/movies/:movies_id'
-          render={({ match }) => {
-            const { movies_id } = match.params
-            return (
-              <MovieDetails movieId={movies_id} />
-            )
-          }}
-        />
-        <Route component={NoMatch} />
+          <Route
+            exact path='/'
+            render={() => {
+              const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
+              return (
+                <div>
+                  <NavBar
+                    clearFilteredMovies={this.clearFilteredMovies}
+                    filterMovies={this.filterMovies}
+                  />
+                  {this.state.showError && <h1>No movies match your search criteria!</h1>}
+                  {!this.state.showError && <Movies movieData={whichData} />}
+                </div>
+              )
+            }}
+          />
+          <Route
+            exact path='/movies/:movies_id'
+            render={({ match }) => {
+              const { movies_id } = match.params
+              return (
+                <MovieDetails movieId={movies_id} />
+              )
+            }}
+          />
+          <Route component={NoMatch} />
         </Switch>
       </main>
     )
