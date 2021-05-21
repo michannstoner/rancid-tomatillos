@@ -67,7 +67,7 @@ class MovieDetails extends Component {
         </div>
         <Link to='/'>
           <div className='buttonContainer'>
-            <button>GO BACK</button>
+            <button onClick={ () => this.props.clearMovies()}>GO BACK</button>
           </div>
         </Link>
       </section>

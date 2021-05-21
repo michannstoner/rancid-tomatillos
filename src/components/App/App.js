@@ -89,11 +89,17 @@ class App extends Component {
             render={({ match }) => {
               const { movies_id } = match.params
               return (
-                <MovieDetails movieId={movies_id} />
+                <MovieDetails movieId={movies_id} clearMovies={this.clearFilteredMovies} />
               )
             }}
           />
-          <Route component={NoMatch} />
+          <Route
+            render={ () => {
+              return (
+                <NoMatch clearMovies={this.clearFilteredMovies} />
+              )
+            }}
+          />
         </Switch>
       </main>
     )
