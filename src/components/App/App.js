@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       movieData: [],
       error: '',
-      searchBarValue: '',
       filteredMovies: []
     }
   }
@@ -29,11 +28,11 @@ class App extends Component {
   }
 
 
-  filterMoviesBySearch = (event) => {
-    this.setState({searchBarValue: event.target.value}, () => {
-        this.filterMovies(this.state.searchBarValue)
-    })
-  }
+  // filterMoviesBySearch = (event) => {
+  //   this.setState({searchBarValue: event.target.value}, () => {
+  //       this.filterMovies(this.state.searchBarValue)
+  //   })
+  // }
 
 
   filterMovies = value => {
@@ -46,17 +45,26 @@ class App extends Component {
   }
 
 
+  clearInput = (event) => {
+    event.preventDefault()
+    this.setState({searchBarValue: ''})
+  }
+
 
   render() {
     return (
       <main className="App">
-        <NavBar handleChange={this.filterMoviesBySearch}/>
+        <NavBar
+          handleChange={this.filterMoviesBySearch}
+          clearSearch={this.clearInput}
+          filterMovies={this.filterMovies}
+        />
         {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
           exact path='/'
             render={() => {
-              const whichData = this.state.searchBarValue ? this.state.filteredMovies : this.state.movieData
+              const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
               return (
                 <Movies movieData={whichData} />
               )
