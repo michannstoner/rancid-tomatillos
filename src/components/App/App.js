@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Movies from '../Movies/Movies.js'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import NavBar from '../NavBar/NavBar'
+import NoMatch from '../NoMatch/NoMatch'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
 import { Route, Switch, Redirect } from 'react-router-dom'
@@ -54,6 +55,7 @@ class App extends Component {
         />
         {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
+        <Switch>
         <Route
           exact path='/'
             render={() => {
@@ -64,7 +66,7 @@ class App extends Component {
             }}
           />
         <Route
-          path='/movies/:movies_id'
+          exact path='/movies/:movies_id'
           render={({ match }) => {
             const { movies_id } = match.params
             return (
@@ -72,7 +74,8 @@ class App extends Component {
             )
           }}
         />
-        <Redirect to="/" />
+        <Route component={NoMatch} />
+        </Switch>
       </main>
     )
   }
