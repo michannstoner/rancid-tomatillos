@@ -79,7 +79,7 @@ class App extends Component {
                   filterMovies={this.filterMovies}
                 />
 
-                {this.state.showError && <NoMatch />}
+                {this.state.showError && <h1>No movies match your search criteria!</h1>}
 
                 {!this.state.showError && <Movies movieData={whichData} />}
 

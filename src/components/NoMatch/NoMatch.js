@@ -16,3 +16,4 @@ const NoMatch = () => {
 }
 
 export default NoMatch
+// onClick={ () => clearFilteredMovies()
