@@ -4,7 +4,7 @@ import MovieDetails from '../MovieDetails/MovieDetails'
 import NavBar from '../NavBar/NavBar'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { filterMoviesResults, filterSingleMovieResult } from '../../utilities'
 
 class App extends Component {
@@ -72,6 +72,7 @@ class App extends Component {
             )
           }}
         />
+        <Redirect to="/" />
       </main>
     )
   }
