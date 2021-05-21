@@ -10,6 +10,7 @@ const Movies = ({ movieData }) => {
         id={movie.id}
         title={movie.title}
         img={movie.poster_path}
+        rating={movie.average_rating}
       />
     )
   })
