@@ -3,6 +3,7 @@ import { getSingleMovie, getSingleVideo } from '../../apiCalls'
 import './MovieDetails.css'
 import { Link } from 'react-router-dom'
 import { filterSingleMovieResult, filterVideoResults } from '../../utilities'
+import NoMatch from '../NoMatch/NoMatch'
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class MovieDetails extends Component {
         this.setState({ singleMovie: filteredMovieData })
       })
       .catch(error => this.setState({ error: 'Something went wrong!' }))
-    
+
     getSingleVideo(this.props.movieId)
       .then(data => {
         const filteredVideoData = filterVideoResults(data)
@@ -31,14 +32,19 @@ class MovieDetails extends Component {
   }
 
   render() {
+    if (!this.state.singleVideoKey && !this.state.error) {
+      return <h1>Loading content...</h1>
+    }
     const movieDate = new Date(`${this.state.singleMovie.release_date}`)
     const yearReleased = movieDate.getFullYear()
     const backgroundStyle = {
-        backgroundImage: 
-        `linear-gradient(to right, #1C1D1E, 60%, transparent), 
+        backgroundImage:
+        `linear-gradient(to right, #1C1D1E, 60%, transparent),
          url(${this.state.singleMovie.backdrop_path})`
       }
-
+    if (this.state.error) {
+        return ( <NoMatch />)
+      } else {
     return (
       <section className="movieDetailsContainer" style={backgroundStyle}>
         <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
@@ -51,7 +57,7 @@ class MovieDetails extends Component {
           <p>{this.state.singleMovie.overview}</p>
         </div>
         <div className='videoContainer'>
-          <iframe 
+          <iframe
             src={`https://youtube.com/embed/${this.state.singleVideoKey}`}
             alt='trailer-iframe-video-player'
             title='trailer-video-player'
@@ -67,6 +73,7 @@ class MovieDetails extends Component {
       </section>
     )
   }
+}
 }
 
 export default MovieDetails
