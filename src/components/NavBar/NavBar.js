@@ -1,17 +1,15 @@
 import React from 'react'
 import './NavBar.css'
+import Form from '../Form/Form'
 
-const NavBar = ( {handleChange} ) => {
+const NavBar = ( {clearFilteredMovies, filterMovies} ) => {
   return (
     <div className='navBar'>
       <h1>Rancid Tomatillos</h1>
-      <form>
-        <input
-          type='text'
-          placeholder='Search for Movie'
-          onChange={event => handleChange(event)}/>
-        <button>CLEAR</button>
-      </form>
+      <Form
+        clearFilteredMovies={clearFilteredMovies}
+        filterMovies={filterMovies}
+      />
     </div>
   )
 }

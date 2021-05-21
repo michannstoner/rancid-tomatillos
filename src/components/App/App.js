@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       movieData: [],
       error: '',
-      searchBarValue: '',
       filteredMovies: []
     }
   }
@@ -29,34 +28,36 @@ class App extends Component {
   }
 
 
-  filterMoviesBySearch = (event) => {
-    this.setState({
-      searchBarValue: event.target.value
+  filterMovies = value => {
+    const filteredMovies = this.state.movieData.filter(movie => {
+      return movie.title.toLowerCase().includes(value.toLowerCase())
     })
-    this.filterMovies(event.target.value)
+    this.setState({
+      filteredMovies: filteredMovies
+    })
   }
 
 
-filterMovies = value => {
-  const filteredMovies = this.state.movieData.filter(movie => {
-    return movie.title.toLowerCase().includes(value.toLowerCase())
-  })
-  this.setState({
-    filteredMovies: filteredMovies
-  })
-}
+  clearFilteredMovies = () => {
+    this.setState({
+      filteredMovies: []
+    })
+  }
 
 
   render() {
     return (
       <main className="App">
-        <NavBar handleChange={this.filterMoviesBySearch}/>
+        <NavBar
+          clearFilteredMovies={this.clearFilteredMovies}
+          filterMovies={this.filterMovies}
+        />
         {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route
           exact path='/'
             render={() => {
-              const whichData = this.state.searchBarValue ? this.state.filteredMovies : this.state.movieData
+              const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
               return (
                 <Movies movieData={whichData} />
               )
@@ -74,6 +75,7 @@ filterMovies = value => {
       </main>
     )
   }
+
 }
 
 export default App
