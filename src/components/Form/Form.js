@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-class Form extends Component { //handleChange, clearSearch, filterMovies
+class Form extends Component {
   constructor() {
     super()
   this.state = {
@@ -9,14 +9,20 @@ class Form extends Component { //handleChange, clearSearch, filterMovies
   }
 }
 
+
 filterMoviesBySearch = (event) => {
-  console.log(this.state.searchBarValue)
   this.setState({searchBarValue: event.target.value}, () => {
       this.props.filterMovies(this.state.searchBarValue)
   })
 }
 
 
+clearInput = (event) => {
+  event.preventDefault()
+  this.setState({searchBarValue: ''}, () => {
+      this.props.filterMovies(this.state.searchBarValue)
+  })
+}
 
   render() {
     return (
@@ -24,10 +30,10 @@ filterMoviesBySearch = (event) => {
         <input
         type='text'
         placeholder='Search for Movie'
+        value={this.state.searchBarValue}
         onChange={event => this.filterMoviesBySearch(event)}/>
-        <button onClick={event => this.clearSearch(event)}>CLEAR</button>
+        <button onClick={event => this.clearInput(event)}>CLEAR</button>
       </form>
-
     )
   }
 }

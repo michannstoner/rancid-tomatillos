@@ -44,11 +44,16 @@ class App extends Component {
     })
   }
 
+setToEmpty = () => {
+  this.setState({
+    filteredMovies: []
+  })
+}
 
-  clearInput = (event) => {
-    event.preventDefault()
-    this.setState({searchBarValue: ''})
-  }
+  // clearInput = (event) => {
+  //   event.preventDefault()
+  //   this.setState({searchBarValue: ''})
+  // }
 
 
   render() {
