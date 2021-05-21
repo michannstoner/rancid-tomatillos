@@ -19,9 +19,7 @@ filterMoviesBySearch = (event) => {
 
 clearInput = (event) => {
   event.preventDefault()
-  this.setState({searchBarValue: ''}, () => {
-      this.props.filterMovies(this.state.searchBarValue)
-  })
+  this.setState({searchBarValue: ''}, () => this.props.clearFilteredMovies())
 }
 
   render() {

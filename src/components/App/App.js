@@ -28,13 +28,6 @@ class App extends Component {
   }
 
 
-  // filterMoviesBySearch = (event) => {
-  //   this.setState({searchBarValue: event.target.value}, () => {
-  //       this.filterMovies(this.state.searchBarValue)
-  //   })
-  // }
-
-
   filterMovies = value => {
     const filteredMovies = this.state.movieData.filter(movie => {
       return movie.title.toLowerCase().includes(value.toLowerCase())
@@ -44,24 +37,19 @@ class App extends Component {
     })
   }
 
-setToEmpty = () => {
-  this.setState({
-    filteredMovies: []
-  })
-}
-
-  // clearInput = (event) => {
-  //   event.preventDefault()
-  //   this.setState({searchBarValue: ''})
-  // }
+  clearFilteredMovies = () => {
+    console.log('hello')
+    this.setState({
+      filteredMovies: []
+    })
+  }
 
 
   render() {
     return (
       <main className="App">
         <NavBar
-          handleChange={this.filterMoviesBySearch}
-          clearSearch={this.clearInput}
+          clearFilteredMovies={this.clearFilteredMovies}
           filterMovies={this.filterMovies}
         />
         {!this.state.movieData.length && <h2>Loading</h2>}
