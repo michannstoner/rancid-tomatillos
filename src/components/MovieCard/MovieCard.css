@@ -1,16 +1,12 @@
-/* * {
-  border: 1px solid black;
-} */
 a {
-  height: I’m 575px;
-  width: 400px;
+  height: 475px;
+  width: 300px;
   display: flex;
   flex-direction: column;
 }
 
 .movieCard {
   background-size: cover;
-  
   transition: 0.5s ease;
   cursor: pointer;
   color: white;
@@ -21,5 +17,6 @@ a {
 
 .movieCard:hover {
   transform: scale(1.2);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0);
+  opacity: 50%;
 }
