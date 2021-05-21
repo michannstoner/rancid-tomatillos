@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       movieData: [],
       error: '',
-      filteredMovies: []
+      filteredMovies: [],
+      showError: false
     }
   }
 
@@ -33,9 +34,18 @@ class App extends Component {
     const filteredMovies = this.state.movieData.filter(movie => {
       return movie.title.toLowerCase().includes(value.toLowerCase())
     })
-    this.setState({
-      filteredMovies: filteredMovies
-    })
+      this.setState({
+        filteredMovies: filteredMovies}, () => this.showErrow(value)
+      )
+  }
+
+
+  showErrow = (value) => {
+    if (!this.state.filteredMovies.length && value) {
+      this.setState({
+        showError: true
+      })
+    }
   }
 
 
@@ -49,22 +59,30 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <NavBar
-          clearFilteredMovies={this.clearFilteredMovies}
-          filterMovies={this.filterMovies}
-        />
+
         {!this.state.movieData.length && <h2>Loading</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         <Switch>
         <Route
           exact path='/'
-            render={() => {
-              const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
-              return (
-                <Movies movieData={whichData} />
-              )
-            }}
-          />
+          render={() => {
+            const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
+            return (
+              <div>
+                <NavBar
+                  clearFilteredMovies={this.clearFilteredMovies}
+                  filterMovies={this.filterMovies}
+                />
+
+                {this.state.showError && <NoMatch />}
+
+                {!this.state.showError && <Movies movieData={whichData} />}
+
+              </div>
+            )
+          }}
+        />
+
         <Route
           exact path='/movies/:movies_id'
           render={({ match }) => {
