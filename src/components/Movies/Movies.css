@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -11,10 +12,16 @@ h1 {
   color: white;
 }
 
+h2 {
+  color: white;
+}
+
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 100px;
-  grid-row-gap: 100px;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  padding-right: 5em;
+  padding-left: 5em;
 }
