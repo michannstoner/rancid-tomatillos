@@ -15,7 +15,7 @@ describe('Homepage', () => {
           'title': 'A Movie',
           'average_rating': 100
         }
-      ]    
+      ]
     })
       .visit('http://localhost:3000')
   })
@@ -30,7 +30,7 @@ describe('Homepage', () => {
     it('should display a nav bar', () => {
     cy.get('h1').contains('Rancid Tomatillos').should('be.visible')
       .get('form > input').should('be.visible')
-      .get('button').contains('CLEAR').should('be.visible')
+      .get('i').should('be.visible')
     })
 
     it('should show the input value as the user is typing', () => {

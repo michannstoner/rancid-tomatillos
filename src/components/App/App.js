@@ -65,8 +65,6 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        {!this.state.movieData.length && <h2>Loading</h2>}
-        {this.state.error && <h2>{this.state.error}</h2>}
         <Switch>
           <Route
             exact path='/'
@@ -74,10 +72,13 @@ class App extends Component {
               const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
               return (
                 <div>
+
                   <NavBar
                     clearFilteredMovies={this.clearFilteredMovies}
                     filterMovies={this.filterMovies}
                   />
+                  {!this.state.movieData.length && !this.state.error && <h2>Loading</h2>}
+                  {this.state.error && <h2>{this.state.error}</h2>}
                   {this.state.showError && <h1>No movies match your search criteria!</h1>}
                   {!this.state.showError && <Movies movieData={whichData} />}
                 </div>
