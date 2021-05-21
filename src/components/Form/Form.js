@@ -25,13 +25,13 @@ class Form extends Component {
 
   render() {
     return (
-      <form>
+      <form classname='searchBar'>
         <input
           type='text'
-          placeholder='Search for Movie'
+          placeholder='Search Movies by Title'
           value={this.state.searchBarValue}
           onChange={event => this.filterMoviesBySearch(event)}/>
-        <button onClick={event => this.clearInput(event)}>CLEAR</button>
+        <i class='far fa-times-circle fa-2x' onClick={event => this.clearInput(event)}></i>
       </form>
     )
   }
