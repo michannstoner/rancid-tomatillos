@@ -51,7 +51,8 @@ class App extends Component {
 
   clearFilteredMovies = () => {
     this.setState({
-      filteredMovies: []
+      filteredMovies: [],
+      showError: false
     })
   }
 
