@@ -35,19 +35,17 @@ class App extends Component {
       return movie.title.toLowerCase().includes(value.toLowerCase())
     })
       this.setState({
-        filteredMovies: filteredMovies}, () => this.showErrow(value)
+        filteredMovies: filteredMovies}, () => this.showError(value)
       )
   }
 
 
   showError = value => {
     if (value) {
-      const showError = this.setState({showError: true})
-      const hideError = this.setState({showError: false})
-      this.state.filteredMovies.length ? hideError : showError
+      {this.state.filteredMovies.length && this.setState({showError: false})}
+      {!this.state.filteredMovies.length && this.setState({showError: true})}
     }
   }
-
 
   clearFilteredMovies = () => {
     this.setState({
