@@ -5,8 +5,8 @@ import NavBar from '../NavBar/NavBar'
 import NoMatch from '../NoMatch/NoMatch'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { filterMoviesResults, filterSingleMovieResult } from '../../utilities'
+import { Route, Switch } from 'react-router-dom'
+import { filterMoviesResults } from '../../utilities'
 
 class App extends Component {
   constructor() {
@@ -65,8 +65,6 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        {!this.state.movieData.length && <h2>Loading</h2>}
-        {this.state.error && <h2>{this.state.error}</h2>}
         <Switch>
           <Route
             exact path='/'
@@ -74,10 +72,13 @@ class App extends Component {
               const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
               return (
                 <div>
+
                   <NavBar
                     clearFilteredMovies={this.clearFilteredMovies}
                     filterMovies={this.filterMovies}
                   />
+                  {!this.state.movieData.length && !this.state.error && <h2>Loading</h2>}
+                  {this.state.error && <h3>{this.state.error}</h3>}
                   {this.state.showError && <h1>No movies match your search criteria!</h1>}
                   {!this.state.showError && <Movies movieData={whichData} />}
                 </div>
