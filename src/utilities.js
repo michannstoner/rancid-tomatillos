@@ -11,14 +11,15 @@ const filterMoviesResults = moviesData => {
 }
 
 const filterSingleMovieResult = singleMovieData => {
-  const { id, title, backdrop_path, release_date, overview, average_rating } = singleMovieData.movie
+  const { id, title, backdrop_path, release_date, overview, average_rating, genres } = singleMovieData.movie
   const filteredData = {
     'id': id,
     'title': title,
     'backdrop_path': backdrop_path,
     'release_date': release_date,
     'overview': overview,
-    'average_rating': average_rating
+    'average_rating': average_rating,
+    'genres': genres[0]
   }
   return filteredData
 }
