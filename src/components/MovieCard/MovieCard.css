@@ -37,7 +37,11 @@ a {
   font-size: 18px;
 }
 
-.rating {
-  margin-right: 2em;
-  margin-top: 0;
+.ratingContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 3em;
+  height: 1.5em;
+  margin-top: 0.10em;
 }
