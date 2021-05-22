@@ -5,9 +5,10 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 
 
 ### Main Page
-![](https://media.giphy.com/media/fYOLZbh2jRtoetZ4VB/giphy.gif)
+
 
 ### Search Movies Feature
+![](https://media.giphy.com/media/fYOLZbh2jRtoetZ4VB/giphy.gif)
 ![](https://media.giphy.com/media/GE01Nhf7Z8D97tdg9w/giphy.gif)
 
 ### Movie Details
