@@ -43,35 +43,35 @@ class MovieDetails extends Component {
          url(${this.state.singleMovie.backdrop_path})`
       }
     if (this.state.error) {
-        return ( <NoMatch />)
-      } else {
-    return (
-      <section className="movieDetailsContainer" style={backgroundStyle}>
-        <Link to='/'style={{textDecoration: 'none', color: 'white'}}>
-          <i class='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
-        </Link>
-        <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
-        <div className='infoContainer'>
-         {this.state.singleMovie.average_rating &&
-          <h2>⭐️ {this.state.singleMovie.average_rating.toFixed(1)}</h2>}
-          <h2>{yearReleased}</h2>
-        </div>
-        <div className='overviewContainer'>
-          <div className='overview'>
-            <p>{this.state.singleMovie.overview}</p>
+      return ( <NoMatch />)
+    } else {
+      return (
+        <section className="movieDetailsContainer" style={backgroundStyle}>
+          <Link to='/'style={{textDecoration: 'none', color: 'white'}}>
+            <i class='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
+          </Link>
+          <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
+          <div className='infoContainer'>
+           {this.state.singleMovie.average_rating &&
+            <h2>⭐️ {this.state.singleMovie.average_rating.toFixed(1)}</h2>}
+            <h2>{yearReleased}</h2>
           </div>
-          <iframe 
-            src={`https://youtube.com/embed/${this.state.singleVideoKey}`}
-            alt='trailer-iframe-video-player'
-            title='trailer-video-player'
-            height='300'
-            width='500'>
-          </iframe>
-        </div>
-      </section>
-    )
+          <div className='overviewContainer'>
+            <div className='overview'>
+              <p>{this.state.singleMovie.overview}</p>
+            </div>
+            <iframe
+              src={`https://youtube.com/embed/${this.state.singleVideoKey}`}
+              alt='trailer-iframe-video-player'
+              title='trailer-video-player'
+              height='300'
+              width='500'>
+            </iframe>
+          </div>
+        </section>
+      )
+    }
   }
-}
 }
 
 export default MovieDetails
