@@ -15,6 +15,14 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 
 ### Setup
 
+* From your terminal, clone the repo  
+`$git clone git@github.com:sarahlane8/Rancid_Tomatillos.git`  
+* `cd` into the root directory of the project
+* Run `$npm install` for dependencies
+* Run `$npm start`
+* A browser should automatically open with the homepage of Rancid Tomatillos displaying!
+* You're ready to go!
+
 
 ### Technologies
 <p>
@@ -31,9 +39,7 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 We utilized several new technologies for this application, and we felt very comfortable using React despite having learned it in such a short amount of time.  We also felt the most comfortable applying breakpoints to make our application responsive across different devices than we have in the past.
 
 #### Challenges
-Cypress proved very challenging for us.  It was our first time utilizing this tool, and we had to familiarize ourselves with the appropriate syntax and assertion statements, while also learning the testing environment nuances.  We also had to master stubbing network requests, and simulating errors from the server.
-
-React Router was challenging to put into place as well, as we had never used it before.
+Cypress proved very challenging for us.  It was our first time utilizing this tool, and we had to familiarize ourselves with the appropriate syntax and assertion statements, while also learning the testing environment nuances.  We also had to master stubbing network requests, and simulating errors from the server.  React Router was challenging to put into place as well, as we had never used it before.
 
 
 ### Future Plans for Application
