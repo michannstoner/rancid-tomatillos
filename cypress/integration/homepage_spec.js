@@ -76,5 +76,10 @@ describe('Error Handling', () => {
       .get('button').should('be.visible').contains('GO TO HOMEPAGE')
   })
 
-
+  it('should redirect a user to homepage when the button on error message display is clicked', () => {
+    cy.visit('http://localhost:3000/wrongURL')
+      .get('button').click()
+      .url().should('eq', 'http://localhost:3000/')
+  })
+  
 })
