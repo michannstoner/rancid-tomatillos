@@ -13,7 +13,7 @@ h1 {
 
 input {
   width: 250px;
-  height: 50px;
+  height: 25px;
   border-radius: 50px;
   border: solid white 3.5px;
   font-family: inherit;
@@ -23,13 +23,19 @@ input {
   caret-color: #83e377;
   color: #83e377;
   text-align: center;
+  padding: 5px;
   margin-bottom: 1em;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
 }
 
 .fa-times-circle {
   color: white;
   margin-right: 2em;
   margin-left: 0.25em;
-  align-self: center;
+  margin-top: 0.15em;
 }
 
