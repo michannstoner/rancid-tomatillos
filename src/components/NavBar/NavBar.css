@@ -12,16 +12,24 @@ h1 {
 }
 
 input {
-  width: 200px;
-  height: 30px;
+  width: 250px;
+  height: 50px;
   border-radius: 50px;
   border: solid white 3.5px;
+  font-family: inherit;
+  font-weight: bolder;
   outline: none;
   background: #1B1C1D;
   caret-color: #83e377;
   color: #83e377;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
-.far {
+.fa-times-circle {
   color: white;
+  margin-right: 2em;
+  margin-left: 0.25em;
+  align-self: center;
 }
+
