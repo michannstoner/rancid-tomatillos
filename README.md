@@ -1,6 +1,7 @@
 # Rancid Tomatillos
 A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Stoner](https://github.com/michannstoner).
-Original project spec can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+
+Original project spec can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
 
 ### Description
 Rancid Tomatillos is a movie review application. Its purpose is to allow users to view a list of all movies, search for a specific movie, and view more information about a movie. In viewing more information about a movie, a user is shown a rating, the year the movie was released, it's genre and overview, along with a trailer for the movie! The learning goals for this project included:
