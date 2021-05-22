@@ -7,8 +7,6 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 ### Main Page
 ![](https://media.giphy.com/media/vcRbt9njUazLRqRxB8/giphy.gif)
 
-
-
 ### Movie Details
 - more images/gifs!
 
