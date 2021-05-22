@@ -9,19 +9,20 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .movieTitle {
   font-size: 2.5em;
-  margin-left: 1em;
+  margin-left: 2.3em;
   margin-top: 0.5em;
 }
 
 .infoContainer {
   display: flex;
-  width: 10em;
-  justify-content:space-around;
-  margin-left: 1em;
+  width: 25em;
+  justify-content:space-between;
+  margin-left: 5em;
 }
 
 .overviewContainer {
@@ -29,19 +30,26 @@
   height: 50vh;
   display: flex;
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 8em;
 }
 
 .overview {
   width: 40vw;
-  margin-right: 10em;
+  height: 10vh;
+  margin-left: 6em;
 }
 
 i {
-  margin: 0.75em 0.75em 0.75em 0.75em;
+  margin-left: 1.7em;
+  margin-top: 1.5em;
 }
 
 i:hover {
   color: #83e377;
+}
+
+iframe {
+  margin-right: 6em;
 }
 

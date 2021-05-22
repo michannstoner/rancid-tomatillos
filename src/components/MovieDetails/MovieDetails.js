@@ -42,6 +42,7 @@ class MovieDetails extends Component {
         `linear-gradient(to right, #1C1D1E, 60%, transparent),
          url(${this.state.singleMovie.backdrop_path})`
       }
+
     if (this.state.error) {
         return ( <NoMatch />)
       } else {
@@ -55,6 +56,7 @@ class MovieDetails extends Component {
          {this.state.singleMovie.average_rating &&
           <h2>⭐️ {this.state.singleMovie.average_rating.toFixed(1)}</h2>}
           <h2>{yearReleased}</h2>
+          <h2>{this.state.singleMovie.genres}</h2>
         </div>
         <div className='overviewContainer'>
           <div className='overview'>
@@ -64,8 +66,8 @@ class MovieDetails extends Component {
             src={`https://youtube.com/embed/${this.state.singleVideoKey}`}
             alt='trailer-iframe-video-player'
             title='trailer-video-player'
-            height='300'
-            width='500'>
+            height='400'
+            width='600'>
           </iframe>
         </div>
       </section>
