@@ -40,16 +40,11 @@ class App extends Component {
   }
 
 
-  showErrow = (value) => {
-    if (!this.state.filteredMovies.length && value) {
-      this.setState({
-        showError: true
-      })
-    }
-    if (this.state.filteredMovies.length && value) {
-      this.setState({
-        showError: false
-      })
+  showError = value => {
+    if (value) {
+      const showError = this.setState({showError: true})
+      const hideError = this.setState({showError: false})
+      this.state.filteredMovies.length ? hideError : showError
     }
   }
 
