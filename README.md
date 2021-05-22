@@ -7,7 +7,7 @@ Rancid Tomatillos is a movie review application. Its purpose is to allow users t
 - Using React.js 
 - Creating multi-page UX implementing React Router 
 - Implementing Cypress.io for acceptance testing
-- 
+- Make network requests using RESTful APIs
 
 
 ### Main Page
