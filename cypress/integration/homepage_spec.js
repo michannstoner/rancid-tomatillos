@@ -63,4 +63,18 @@ describe('Error Handling', () => {
         return cy.get('h3').contains('Something went wrong, try again later!')
       })
   })
+
+  it('should display an error message when search criteria doesn\'t match any movies', () => {
+    cy.get('form > input').type('word')
+      .get('.movieCard').should('have.length', 0)
+      .get('h1').contains('No movies match your search criteria!')
+  })
+
+  it('should display an error message when the user types in an URL that doesn\'t exist', () => {
+    cy.visit('http://localhost:3000/wrongURL')
+      .get('h1').contains('Sorry, page not found!')
+      .get('button').should('be.visible').contains('GO TO HOMEPAGE')
+  })
+
+
 })
