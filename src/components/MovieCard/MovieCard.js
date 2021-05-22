@@ -10,7 +10,7 @@ const MovieCard = props => {
       </Link>
       <div className='titleContainer'>
         <p className='title'>{props.title}</p>
-        <p className='rating'><i class="far fa-star" style={{color: '#fcbf49'}}></i>{props.rating.toFixed(1)}</p>
+        <p className='rating'><i class="far fa-star" style={{color: '#fcbf49'}}>  </i>{props.rating.toFixed(1)}</p>
 
       </div>
     </article>
