@@ -8,7 +8,7 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 ![](https://media.giphy.com/media/vcRbt9njUazLRqRxB8/giphy.gif)
 
 ### Movie Details
-- more images/gifs!
+![](https://media.giphy.com/media/GE01Nhf7Z8D97tdg9w/giphy.gif)
 
 ### Mobile View/Responsive 
 - even more images/gifs!
