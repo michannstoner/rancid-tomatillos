@@ -45,3 +45,9 @@ a {
   height: 1.5em;
   margin-top: 0.10em;
 }
+
+@media screen and (max-width: 634px) {
+  a {
+    align-self: center;
+  }
+}

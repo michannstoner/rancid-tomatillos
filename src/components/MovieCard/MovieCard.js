@@ -16,7 +16,7 @@ const MovieCard = props => {
         </div>
       </div>
     </article>
-    
+
   )
 }
 

@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './NoMatch.css'
 
 
 const NoMatch = () => {
   return (
-    <div>
+    <div className="noMatchContainer">
       <h1>Sorry, page not found!</h1>
       <Link to='/'>
-        <div className='goHomeButton'>
           <button>GO TO HOMEPAGE</button>
-        </div>
       </Link>
     </div>
   )

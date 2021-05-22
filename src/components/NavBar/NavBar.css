@@ -39,3 +39,26 @@ input {
   margin-top: 0.10em;
 }
 
+@media screen and (max-width: 1280px) {
+  h1 {
+    margin: 53.6 0 53.6 50;
+  }
+}
+
+@media screen and (max-width: 958px) {
+  h1 {
+    margin: auto
+  }
+  .navBar {
+    flex-direction: column;
+  }
+  .searchBar {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 634px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

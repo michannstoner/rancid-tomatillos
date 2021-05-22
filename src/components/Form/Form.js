@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../NavBar/NavBar.css'
 
 
 class Form extends Component {
