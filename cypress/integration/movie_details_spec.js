@@ -54,18 +54,14 @@ describe('Movie Details', () => {
   })
 
   it('should display an error message if movieDetails fails to fetch', () => {
-    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/12367', {
-      'movie':  {
-        'id': '',
-        'title': '',
-        'backdrop_path': '',
-        'release_date': '',
-        'overview': '',
-        'average_rating': ''
-        }
-      })
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/12367', { statusCode: 404 })
       .get('.movieCard:first').click()
       .get('h1').contains('Sorry, page not found!')
+  })
 
+  it('should display an error message if a movie\'s video fails to fetch', () => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/12367/videos', { statusCode: 404 })
+      .get('.movieCard:first').click()
+      .get('h1').contains('Sorry, page not found!')
   })
 })

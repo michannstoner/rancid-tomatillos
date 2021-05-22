@@ -6,7 +6,7 @@ import NoMatch from '../NoMatch/NoMatch'
 import './App.css'
 import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
-import { filterMoviesResults, filterSingleMovieResult } from '../../utilities'
+import { filterMoviesResults } from '../../utilities'
 
 class App extends Component {
   constructor() {
