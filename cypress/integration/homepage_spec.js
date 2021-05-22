@@ -20,6 +20,12 @@ describe('Homepage', () => {
       .visit('http://localhost:3000')
   })
 
+    it('should display a nav bar', () => {
+      cy.get('h1').contains('Rancid Tomatillos').should('be.visible')
+      .get('form > input').should('be.visible')
+      .get('i').should('be.visible')
+    })
+
     it('should display movie cards on page load', () => {
     cy.get('.movieCard').contains('Another One')
       .get('.movieCard').contains('A Movie')
@@ -30,13 +36,7 @@ describe('Homepage', () => {
       .get('img').should('be.visible')
     })
 
-    it('should display a nav bar', () => {
-    cy.get('h1').contains('Rancid Tomatillos').should('be.visible')
-      .get('form > input').should('be.visible')
-      .get('i').should('be.visible')
-    })
-
-    it('should show the input value as the user is typing', () => {
+    it('should show the input value as the user is typing in searchbar', () => {
     cy.get('form > input').type('mulan')
       .should('have.value', 'mulan')
     })
@@ -81,5 +81,5 @@ describe('Error Handling', () => {
       .get('button').click()
       .url().should('eq', 'http://localhost:3000/')
   })
-  
+
 })
