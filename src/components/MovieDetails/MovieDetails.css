@@ -10,6 +10,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-around;
+  position: relative;
 }
 
 .movieTitle {
@@ -52,5 +53,44 @@ i:hover {
 
 iframe {
   margin-right: 6em;
+}
+
+@media only screen and (max-width: 900px) {
+  .movieDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  
+  .overview {
+   width: 90vw;
+   height: 30vh;
+  }
+
+  .overviewContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 60vh;
+
+  }
+
+  .infoContainer,
+  .overview {
+    margin-left: 2em;
+  }
+
+  .movieTitle,
+  .fa-arrow-circle-left {
+    margin-left: 0.75em;
+  }
+
+  iframe {
+    display: none;
+  }
+  
 }
 
