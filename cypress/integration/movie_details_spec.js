@@ -48,7 +48,24 @@ describe('Movie Details', () => {
   })
 
   it('should render the homepage when user clicks go back arrow', () => {
-    cy.get('i').click()
-      .url().should('eq', 'http://localhost:3000/')
+    cy.get('.movieCard:first').click()
+    .get('i').click()
+    .url().should('eq', 'http://localhost:3000/')
+  })
+
+  it('should display an error message if movieDetails fails to fetch', () => {
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/12367', {
+      'movie':  {
+        'id': '',
+        'title': '',
+        'backdrop_path': '',
+        'release_date': '',
+        'overview': '',
+        'average_rating': ''
+        }
+      })
+      .get('.movieCard:first').click()
+      .get('h1').contains('Sorry, page not found!')
+
   })
 })
