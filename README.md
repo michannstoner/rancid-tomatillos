@@ -7,11 +7,11 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 ### Main Page
 ![](https://media.giphy.com/media/vcRbt9njUazLRqRxB8/giphy.gif)
 
-### Movie Details
+### Search Movies Feature
 ![](https://media.giphy.com/media/GE01Nhf7Z8D97tdg9w/giphy.gif)
 
-### Mobile View/Responsive 
-- even more images/gifs!
+### Movie Details
+![](https://media.giphy.com/media/Wi3QgYU3ocgSJTtfh0/giphy.gif)
 
 ### Setup 
 
