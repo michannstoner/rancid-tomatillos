@@ -41,3 +41,9 @@ a {
 .rating {
   margin-right: 1em;
 }
+
+@media screen and (max-width: 634px) {
+  a {
+    align-self: center;
+  }
+}
