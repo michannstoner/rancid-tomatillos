@@ -24,7 +24,8 @@ describe('Movie Details', () => {
         'backdrop_path': 'https://image.tmdb.org/t/p/original//6j2g4fEAmjJqAclzprIpvz9Gaw4.jpg',
         'release_date': '2018-03-01',
         'overview': 'Some overview',
-        'average_rating': 100
+        'average_rating': 100,
+        'genres': ['Thriller']
       }
     })
     .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/12367/videos', {
