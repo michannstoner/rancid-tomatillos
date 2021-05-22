@@ -5,13 +5,16 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 
 
 ### Main Page
-![](https://media.giphy.com/media/vcRbt9njUazLRqRxB8/giphy.gif)
+![](https://media.giphy.com/media/fYOLZbh2jRtoetZ4VB/giphy.gif)
 
 ### Search Movies Feature
 ![](https://media.giphy.com/media/GE01Nhf7Z8D97tdg9w/giphy.gif)
 
 ### Movie Details
 ![](https://media.giphy.com/media/Wi3QgYU3ocgSJTtfh0/giphy.gif)
+
+### Mobile / Responsive Design
+![](https://media.giphy.com/media/LKtyZctNdLxz7fcbFy/giphy.gif)
 
 ### Setup 
 
