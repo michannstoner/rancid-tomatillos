@@ -31,7 +31,9 @@ A paired project by [Sarah Lane](https://github.com/sarahlane8) and [Michann Sto
 We utilized several new technologies for this application, and we felt very comfortable using React despite having learned it in such a short amount of time.  We also felt the most comfortable applying breakpoints to make our application responsive across different devices than we have in the past.
 
 #### Challenges
+Cypress proved very challenging for us.  It was our first time utilizing this tool, and we had to familiarize ourselves with the appropriate syntax and assertion statements, while also learning the testing environment nuances.  We also had to master stubbing network requests, and simulating errors from the server.
 
+React Router was challenging to put into place as well, as we had never used it before.
 
 
 ### Future Plans for Application
