@@ -37,3 +37,7 @@ React Router was challenging to put into place as well, as we had never used it 
 
 
 ### Future Plans for Application
+- Adding a feature that allows a user to favorite a movie, and adding a button to the navigation bar to toggle the view to favorited movies.  
+- Adding a feature that lets users filter all movies based on genre.
+- Making the video on the movie details' view visible on mobile devices.
+- Allowing users to add their rating of a movie.
