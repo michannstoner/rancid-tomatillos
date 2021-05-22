@@ -56,11 +56,11 @@ describe('Homepage', () => {
 
 describe('Error Handling', () => {
   it('should display an error message when movie data fetch fails', () => {
-    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', '')
+    cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {} )
       .visit('http://localhost:3000')
       .get('h2').contains('Loading')
       .then( () => {
-        cy.get('h2').contains('Something went wrong, try again later!')
+        return cy.get('h3').contains('Something went wrong, try again later!')
       })
   })
 })

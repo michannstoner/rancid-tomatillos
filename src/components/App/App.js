@@ -78,7 +78,7 @@ class App extends Component {
                     filterMovies={this.filterMovies}
                   />
                   {!this.state.movieData.length && !this.state.error && <h2>Loading</h2>}
-                  {this.state.error && <h2>{this.state.error}</h2>}
+                  {this.state.error && <h3>{this.state.error}</h3>}
                   {this.state.showError && <h1>No movies match your search criteria!</h1>}
                   {!this.state.showError && <Movies movieData={whichData} />}
                 </div>
