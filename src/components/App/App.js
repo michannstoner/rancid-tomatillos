@@ -8,6 +8,7 @@ import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
 import { filterMoviesResults } from '../../utilities'
 
+
 class App extends Component {
   constructor() {
     super()
@@ -42,10 +43,11 @@ class App extends Component {
 
   showError = value => {
     if (value) {
-      {this.state.filteredMovies.length && this.setState({showError: false})}
-      {!this.state.filteredMovies.length && this.setState({showError: true})}
+      this.state.filteredMovies.length && this.setState({showError: false})
+      !this.state.filteredMovies.length && this.setState({showError: true})
     }
   }
+
 
   clearFilteredMovies = () => {
     this.setState({
@@ -65,7 +67,6 @@ class App extends Component {
               const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
               return (
                 <div>
-
                   <NavBar
                     clearFilteredMovies={this.clearFilteredMovies}
                     filterMovies={this.filterMovies}
@@ -73,7 +74,7 @@ class App extends Component {
                   {!this.state.movieData.length && !this.state.error && <h2>Loading</h2>}
                   {this.state.error && <h3>{this.state.error}</h3>}
                   {this.state.showError && <h1>No movies match your search criteria!</h1>}
-                  {!this.state.showError && <Movies movieData={whichData} />}
+                  {!this.state.showError && <Movies movieData={whichData} clearMovies={this.clearFilteredMovies}/>}
                 </div>
               )
             }}
@@ -90,7 +91,7 @@ class App extends Component {
           <Route
             render={ () => {
               return (
-                <NoMatch clearMovies={this.clearFilteredMovies} />
+                <NoMatch />
               )
             }}
           />
@@ -99,5 +100,6 @@ class App extends Component {
     )
   }
 }
+
 
 export default App

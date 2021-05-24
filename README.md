@@ -21,6 +21,9 @@ Rancid Tomatillos is a movie review application. The purpose of this project is 
 ### Mobile / Responsive Design
 ![](https://media.giphy.com/media/LKtyZctNdLxz7fcbFy/giphy.gif)
 
+### Accessibility Audit 
+![](https://media.giphy.com/media/aLEQk5GKlw7thpFdM9/giphy.gif)
+
 ### Setup
 
 * From your terminal, clone the repo  

@@ -70,7 +70,7 @@ describe('Error Handling', () => {
       .get('h1').contains('No movies match your search criteria!')
   })
 
-  it('should display an error message when the user types in an URL that doesn\'t exist', () => {
+  it('should display an error message when the user types in a URL that doesn\'t exist', () => {
     cy.visit('http://localhost:3000/wrongURL')
       .get('h1').contains('Sorry, page not found!')
       .get('button').should('be.visible').contains('GO TO HOMEPAGE')

@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard/MovieCard.js'
 import './Movies.css'
 
 
-const Movies = ({ movieData }) => {
+const Movies = ({ movieData, clearMovies }) => {
   const movieCards = movieData.map(movie => {
     return (
       <MovieCard
@@ -12,6 +12,7 @@ const Movies = ({ movieData }) => {
         title={movie.title}
         img={movie.poster_path}
         rating={movie.average_rating}
+        clearMovies={clearMovies}
       />
     )
   })
