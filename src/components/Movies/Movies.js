@@ -2,6 +2,7 @@ import React from 'react'
 import MovieCard from '../MovieCard/MovieCard.js'
 import './Movies.css'
 
+
 const Movies = ({ movieData }) => {
   const movieCards = movieData.map(movie => {
     return (
@@ -21,5 +22,6 @@ const Movies = ({ movieData }) => {
     </section>
   )
 }
+
 
 export default Movies
