@@ -8,6 +8,7 @@ import { getAllMovies } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
 import { filterMoviesResults } from '../../utilities'
 
+
 class App extends Component {
   constructor() {
     super()
