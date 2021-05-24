@@ -42,8 +42,8 @@ class App extends Component {
 
   showError = value => {
     if (value) {
-      {this.state.filteredMovies.length && this.setState({showError: false})}
-      {!this.state.filteredMovies.length && this.setState({showError: true})}
+      this.state.filteredMovies.length && this.setState({showError: false})
+      !this.state.filteredMovies.length && this.setState({showError: true})
     }
   }
 
