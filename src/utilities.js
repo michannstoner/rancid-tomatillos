@@ -10,6 +10,7 @@ const filterMoviesResults = moviesData => {
   return filteredData
 }
 
+
 const filterSingleMovieResult = singleMovieData => {
   const { id, title, backdrop_path, release_date, overview, average_rating, genres } = singleMovieData.movie
   const filteredData = {
@@ -23,6 +24,7 @@ const filterSingleMovieResult = singleMovieData => {
   }
   return filteredData
 }
+
 
 const filterVideoResults = singleVideoData => {
   const filteredVideoData = singleVideoData.videos[0].key
