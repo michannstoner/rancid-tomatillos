@@ -53,7 +53,7 @@ class MovieDetails extends Component {
         return (
         <section className='movieDetailsContainer' style={backgroundStyle}>
           <Link to='/'style={{textDecoration: 'none', color: 'white'}}>
-            <i class='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
+            <i className='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
           </Link>
           <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
           <div className='infoContainer'>
