@@ -5,15 +5,17 @@ import { Link } from 'react-router-dom'
 import { filterSingleMovieResult, filterVideoResults } from '../../utilities'
 import NoMatch from '../NoMatch/NoMatch'
 
+
 class MovieDetails extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
       this.state = {
         singleMovie: {},
         singleVideoKey: '',
         error: '',
       }
     }
+
 
   componentDidMount = id => {
     getSingleMovie(this.props.movieId)
@@ -31,6 +33,7 @@ class MovieDetails extends Component {
       .catch(error => this.setState({ error: 'Unable to load video!'}))
   }
 
+
   render() {
     if (!this.state.singleVideoKey && !this.state.error) {
       return <h1>Loading content...</h1>
@@ -45,12 +48,12 @@ class MovieDetails extends Component {
         }
 
     if (this.state.error) {
-        return ( <NoMatch />)
+        return ( <NoMatch /> )
     } else {
         return (
         <section className="movieDetailsContainer" style={backgroundStyle}>
           <Link to='/'style={{textDecoration: 'none', color: 'white'}}>
-            <i class='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
+            <i className='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
           </Link>
           <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
           <div className='infoContainer'>
@@ -76,5 +79,6 @@ class MovieDetails extends Component {
     }
   }
 }
+
 
 export default MovieDetails
