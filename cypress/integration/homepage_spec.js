@@ -20,38 +20,38 @@ describe('Homepage', () => {
       .visit('http://localhost:3000')
   })
 
-    it('should display a nav bar', () => {
-      cy.get('h1').contains('Rancid Tomatillos').should('be.visible')
-      .get('form > input').should('be.visible')
-      .get('i').should('be.visible')
-    })
+  it('should display a nav bar', () => {
+    cy.get('h1').contains('Rancid Tomatillos').should('be.visible')
+    .get('form > input').should('be.visible')
+    .get('i').should('be.visible')
+  })
 
-    it('should display movie cards on page load', () => {
-    cy.get('.movieCard').contains('Another One')
-      .get('.movieCard').contains('A Movie')
-      .get('.movieCard').should('have.length', 2)
-      .get('.movieCard').contains(96)
-      .get('.movieCard').contains(100)
-      .get('i').should('be.visible')
-      .get('img').should('be.visible')
-    })
+  it('should display movie cards on page load', () => {
+  cy.get('.movieCard').contains('Another One')
+    .get('.movieCard').contains('A Movie')
+    .get('.movieCard').should('have.length', 2)
+    .get('.movieCard').contains(96)
+    .get('.movieCard').contains(100)
+    .get('i').should('be.visible')
+    .get('img').should('be.visible')
+  })
 
-    it('should show the input value as the user is typing in searchbar', () => {
-    cy.get('form > input').type('mulan')
-      .should('have.value', 'mulan')
-    })
+  it('should show the input value as the user is typing in searchbar', () => {
+  cy.get('form > input').type('mulan')
+    .should('have.value', 'mulan')
+  })
 
-    it('should only display movies that meet search criteria', () => {
+  it('should only display movies that meet search criteria', () => {
+  cy.get('form > input').type('movie')
+    .get('.movieCard').should('have.length', 1)
+    .get('.movieCard').contains('A Movie')
+  })
+
+  it('should display all movies when user clicks search bar clear button', () => {
     cy.get('form > input').type('movie')
-      .get('.movieCard').should('have.length', 1)
-      .get('.movieCard').contains('A Movie')
-    })
-
-    it('should display all movies when user clicks search bar clear button', () => {
-      cy.get('form > input').type('movie')
-        .get('i:first').click()
-        .get('.movieCard').should('have.length', 2)
-    })
+      .get('i:first').click()
+      .get('.movieCard').should('have.length', 2)
+  })
 })
 
 describe('Error Handling', () => {
