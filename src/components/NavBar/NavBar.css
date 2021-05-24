@@ -54,11 +54,22 @@ input {
   }
   .searchBar {
     margin-bottom: 15px;
+    margin-top: 1em;
+    margin-left: 5em;
+  }
+
+  .cardContainer {
+    margin-top: 3em;
   }
 }
 
 @media screen and (max-width: 634px) {
   .cardContainer {
     grid-template-columns: repeat(1, 1fr);
+    margin-top: 3em;
+  }
+
+  .searchBar {
+    margin-left: 5em;
   }
 }

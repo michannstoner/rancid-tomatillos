@@ -12,7 +12,7 @@ const MovieCard = ({ id, title, img, rating, clearMovies }) => {
       <div className='titleContainer'>
         <p className='title'>{title}</p>
         <div className='ratingContainer'>
-          <i class="far fa-star" style={{color: '#fcbf49'}}></i>
+          <i className'far fa-star' style={{color: '#fcbf49'}}></i>
           <p className='rating'>{rating.toFixed(1)}</p>
         </div>
       </div>

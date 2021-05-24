@@ -5,13 +5,13 @@ describe('Movie Details', () => {
       'movies': [
         {
           'id': 12367,
-          'poster_path': "https://image.tmdb.org/t/p/original//dqA2FCzz4OMmXLitKopzf476RVB.jpg",
+          'poster_path': 'https://image.tmdb.org/t/p/original//dqA2FCzz4OMmXLitKopzf476RVB.jpg',
           'title': 'Another One',
           'average_rating': 100
         },
         {
           'id': 12345,
-          'poster_path': "https://image.tmdb.org/t/p/original//tEvGSlRO0dz1pINzjSEELdTHvwk.jpg",
+          'poster_path': 'https://image.tmdb.org/t/p/original//tEvGSlRO0dz1pINzjSEELdTHvwk.jpg',
           'title': 'A Movie',
           'average_rating': 100
         }
