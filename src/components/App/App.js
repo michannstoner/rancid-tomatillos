@@ -65,7 +65,6 @@ class App extends Component {
               const whichData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movieData
               return (
                 <div>
-
                   <NavBar
                     clearFilteredMovies={this.clearFilteredMovies}
                     filterMovies={this.filterMovies}
@@ -90,7 +89,7 @@ class App extends Component {
           <Route
             render={ () => {
               return (
-                <NoMatch clearMovies={this.clearFilteredMovies} />
+                <NoMatch />
               )
             }}
           />
