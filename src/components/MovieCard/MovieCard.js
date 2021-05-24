@@ -2,6 +2,7 @@ import React from 'react'
 import './MovieCard.css'
 import { Link } from 'react-router-dom'
 
+
 const MovieCard = ({ id, title, img, rating, clearMovies }) => {
   return (
     <article className='movieCard'>
