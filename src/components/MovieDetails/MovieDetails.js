@@ -48,7 +48,7 @@ class MovieDetails extends Component {
         return ( <NoMatch />)
     } else {
         return (
-        <section className="movieDetailsContainer" style={backgroundStyle}>
+        <section className='movieDetailsContainer' style={backgroundStyle}>
           <Link to='/'style={{textDecoration: 'none', color: 'white'}}>
             <i class='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
           </Link>
@@ -63,7 +63,7 @@ class MovieDetails extends Component {
             <div className='overview'>
               <p>{this.state.singleMovie.overview}</p>
             </div>
-            <iframe 
+            <iframe
               src={`https://youtube.com/embed/${this.state.singleVideoKey}`}
               alt='trailer-iframe-video-player'
               title='trailer-video-player'
