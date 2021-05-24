@@ -11,14 +11,14 @@ class Form extends Component {
   }
 
 
-  filterMoviesBySearch = (event) => {
+  filterMoviesBySearch = event => {
     this.setState({searchBarValue: event.target.value}, () => {
         this.props.filterMovies(this.state.searchBarValue)
     })
   }
 
 
-  clearInput = (event) => {
+  clearInput = event => {
     event.preventDefault()
     this.setState({searchBarValue: ''}, () => this.props.clearFilteredMovies())
   }

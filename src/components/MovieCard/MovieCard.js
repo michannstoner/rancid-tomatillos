@@ -2,21 +2,21 @@ import React from 'react'
 import './MovieCard.css'
 import { Link } from 'react-router-dom'
 
-const MovieCard = props => {
+
+const MovieCard = ({ id, title, img, rating, clearMovies }) => {
   return (
     <article className='movieCard'>
-      <Link to={`/movies/${props.id}`}>
-        <img src={props.img} alt="movie poster"/>
+      <Link to={`/movies/${id}`}>
+        <img src={img} alt="movie poster" onClick={ () => clearMovies()}/>
       </Link>
       <div className='titleContainer'>
-        <p className='title'>{props.title}</p>
+        <p className='title'>{title}</p>
         <div className='ratingContainer'>
           <i class="far fa-star" style={{color: '#fcbf49'}}></i>
-          <p className='rating'>{props.rating.toFixed(1)}</p>
+          <p className='rating'>{rating.toFixed(1)}</p>
         </div>
       </div>
     </article>
-
   )
 }
 
