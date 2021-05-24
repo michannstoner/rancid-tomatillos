@@ -6,7 +6,7 @@ const MovieCard = props => {
   return (
     <article className='movieCard'>
       <Link to={`/movies/${props.id}`}>
-        <img src={props.img} alt="movie poster"/>
+        <img src={props.img} alt='movie poster'/>
       </Link>
       <div className='titleContainer'>
         <p className='title'>{props.title}</p>

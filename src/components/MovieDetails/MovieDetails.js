@@ -51,9 +51,9 @@ class MovieDetails extends Component {
         return ( <NoMatch /> )
     } else {
         return (
-        <section className="movieDetailsContainer" style={backgroundStyle}>
-          <Link to='/'style={{textDecoration: 'none', color: 'white'}}>
-            <i className='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()}></i>
+        <section className="movieDetailsContainer" style={backgroundStyle} alt='movie image'>
+          <Link to='/'style={{textDecoration: 'none', color: 'white'}} alt='back to home arrow'>
+            <i className='fas fa-arrow-circle-left fa-3x' onClick={ () => this.props.clearMovies()} alt='back to home arrow'></i>
           </Link>
           <h2 className='movieTitle'>{this.state.singleMovie.title}</h2>
           <div className='infoContainer'>
